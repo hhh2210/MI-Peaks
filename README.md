@@ -109,11 +109,24 @@ run the plot_mi_peaks.ipynb
 ```
 
 
+**3. Run the Representation Recycling (RR)**
+
+```bash
+sh scripts/run_RR.sh
+```
+
 ## 📝License
 Distributed under the Apache-2.0 License. See LICENSE for more information.
 
 
+## Acknowledgements
 
+Some code in this project is adapted from resources provided by the following repositories:
+
+- https://github.com/QwenLM/Qwen2.5-Math
+- https://github.com/ChnQ/TracingLLM
+
+We greatly appreciate the contributions of the original authors.
 
 ## 📖BibTeX
 ```
