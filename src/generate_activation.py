@@ -25,7 +25,7 @@ def load_model(model_path):
     return tokenizer, model
 
 
-def get_acts(query_list, tokenizer, model, layers, device, token_pos=-1):
+def get_acts(query_list, tokenizer, model, layers, token_pos=-1):
     """
     Get given layer activations for the statements. 
     Return dictionary of stacked activations.
@@ -104,7 +104,7 @@ def main():
     if layers == [-1]:
         layers = list(range(len(model.model.layers)))
 
-    acts = get_acts(query_list, tokenizer, model, layers, device, token_pos=-1)
+    acts = get_acts(query_list, tokenizer, model, layers, token_pos=-1)
 
     # save representations
     os.makedirs(f'{args.output_dir}/reasoning_evolve/', exist_ok=True)

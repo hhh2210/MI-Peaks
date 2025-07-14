@@ -82,6 +82,7 @@ def main():
     parser.add_argument("--gt_model", default='deepseek-ai/DeepSeek-R1-Distill-Llama-8B')
     parser.add_argument("--test_model", default='deepseek-ai/DeepSeek-R1-Distill-Llama-8B')
     parser.add_argument("--dataset", default='math_train_12k')
+    parser.add_argument("--layers", nargs='*', type=int, default=[])
 
     parser.add_argument("--sample_num", type=int, default=100)  
 
@@ -101,10 +102,12 @@ def main():
     gt_acts = load_reps(dataset_name=dataset_name, model_tag=gt_model, is_gt=True)
 
 
-    final_mi_dict = calculate_mi(acts=acts, gt_acts=gt_acts, layers=layers, num_samples=args.sample_num, save_dir=save_dir, args=args)
-        
     save_dir = f'results/mi'
     os.makedirs(save_dir, exist_ok=True)
+
+    final_mi_dict = calculate_mi(acts=acts, gt_acts=gt_acts, layers=layers, num_samples=args.sample_num, save_dir=save_dir, args=args)
+        
+
     torch.save(final_mi_dict, f'{save_dir}/{dataset_name}_gtmodel={gt_model}_testmodel={test_model}.pth')
 
 
