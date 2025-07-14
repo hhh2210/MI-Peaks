@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x 
 
-cd RR/
+cd applications/
 
 PROMPT_TYPE="deepseek-math"
 SPLIT="test"
