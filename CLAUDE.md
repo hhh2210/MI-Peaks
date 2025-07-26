@@ -25,8 +25,17 @@ Research project analyzing mutual information (MI) peaks in Large Reasoning Mode
 - `src/applications/data/aime24/` - AIME 2024 test problems
 - `src/data/math_train_12k.csv` - Training math problems
 
-## Quick Start Commands
+  generate_activation.py vs generate_gt_activation.py
 
+  | 特征   | generate_activation.py    | generate_gt_activation.py    |
+  |------|---------------------------|------------------------------|
+  | 输入数据 | math_data['problem'] (问题) | math_data['solution'] (标准答案) |
+  | 生成方式 | model.generate() (推理生成)   | model() (直接前向传播)             |
+  | 保存路径 | acts/reasoning_evolve/    | acts/gt/                     |
+  | 用途   | 捕获模型推理过程的激活               | 获取标准答案的激活作为参考基准              |
+## Quick Start Commands
+source mi/bin/activate
+model_path= /apdcephfs_nj7/share_303407286/models/DeepSeek-R1-Distill-Llama-8B/
 ### Environment Setup
 ```bash
 # Recommended: Python 3.11.5, PyTorch 2.1.2, Transformers 4.46.1
@@ -38,11 +47,6 @@ cd /dockerdata/llm_eval/MI-Peaks/src
 sh scripts/compute_mi_trajectories.sh
 ```
 
-### Visualization
-```bash
-# Open and run plot_mi_peaks.ipynb for MI peaks visualization
-jupyter notebook plot_mi_peaks.ipynb
-```
 
 ### Evaluation Methods
 ```bash

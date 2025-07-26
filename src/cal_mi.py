@@ -4,7 +4,11 @@ import torch
 import torch.nn.functional as F
 from tqdm import tqdm
 from mi_estimators import estimate_mi_hsic
-
+"""
+  - 使用 HSIC (Hilbert-Schmidt Independence Criterion) 估计互信息
+  - 逐层、逐token计算 MI 值，识别推理过程中的信息峰值
+  - 支持断点续传，结果保存为 .pth 文件
+"""
 
 def calculate_mi(acts, gt_acts, layers=[], num_samples=-1, save_dir='results/mi/', args=None):
 

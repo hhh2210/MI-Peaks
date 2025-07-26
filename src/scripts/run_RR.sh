@@ -6,14 +6,14 @@ cd applications/
 PROMPT_TYPE="deepseek-math"
 SPLIT="test"
 NUM_TEST_SAMPLE=-1
-LOG_DIR=your_log/$(date +%m-%d_%H-%M)
+LOG_DIR=log/$(date +%m-%d_%H-%M)
 mkdir -p $LOG_DIR
 
 
 gpu_counter=0
 
 
-model_path='your_dir/DeepSeek-R1-Distill-Llama-8B'
+model_path='/data1/public/models/DeepSeek-R1-Distill-Llama-8B/'
 
 datasets=(
     "aime24" 

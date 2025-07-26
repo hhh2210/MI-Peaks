@@ -1,13 +1,19 @@
 #!/bin/bash
 
+# Activate the mi environment
+source /dockerdata/llm_eval/mi/bin/activate
+
+# Disable tokenizers parallelism to avoid fork warnings
+export TOKENIZERS_PARALLELISM=false
+
 cd applications/
 
-model="your_dir/DeepSeek-R1-Distill-Llama-8B"
+model="/dockerdata/llm_eval/DeepSeek-R1-Distill-Llama-8B"
 
 model_name=$(basename "$model")
-dataset=aime24
+dataset=MATH-500
 
-gpu_id=0
+gpu_id=0,1,2,3
 
 token_budget=4096
 

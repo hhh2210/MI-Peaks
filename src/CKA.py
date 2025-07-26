@@ -1,7 +1,12 @@
 # python ablation_cka.py --dataset pku-rlhf-10k --base_model llama-2-7b-chat
 # python ablation_cka.py --dataset bigcodebench_complete_prompts --base_model codellama-7b
 # python ablation_cka.py --dataset mmlu_all_test_questions --base_model llama-2-7b-chat
-
+"""
+Centered Kernel Alignment
+  - 提供线性和核函数两种CKA计算方式
+  - 包含 CPU (CKA) 和 GPU (CudaCKA) 实现
+  - 用于衡量不同层级表征的相似性
+"""
 import os
 import argparse
 # from model import Projection, MLP

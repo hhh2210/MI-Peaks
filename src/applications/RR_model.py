@@ -143,6 +143,7 @@ class RecursiveThinkingModel(torch.nn.Module):
                     output_hidden_states=False
                 )
                 next_token_logits = outputs.logits[:, -1, :]
+                # 只取概率最高的token
                 candidate_token = next_token_logits.argmax(dim=-1, keepdim=True)
                 del next_token_logits
 

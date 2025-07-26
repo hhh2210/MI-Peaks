@@ -1,0 +1,31 @@
+# torch>=2.1.2
+# transformers>=4.46.1
+vllm
+datasets
+
+# Scientific Computing
+numpy>=1.26.4
+pandas
+scipy
+
+# Symbolic Mathematics & LaTeX
+sympy
+latex2sympy2
+
+# Visualization
+matplotlib
+seaborn
+
+# Text Processing
+regex
+word2number
+
+# Parallel Processing & Progress
+tqdm
+pebble
+multiprocess
+
+# Utilities
+timeout-decorator
+mpmath
+python-dateutil
